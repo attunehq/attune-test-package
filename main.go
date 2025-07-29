@@ -33,5 +33,5 @@ func main() {
 
 	fmt.Printf("Hello from attune-test-package v%s!\n", version)
 	fmt.Printf("Running on %s/%s\n", runtime.GOOS, runtime.GOARCH)
-	fmt.Println("This is a test package for Attune CLI smoke tests.")
+	fmt.Println("This is a test package for Attune CLI smoke tests - Version 2.0!")
 }
