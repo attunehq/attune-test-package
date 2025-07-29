@@ -22,6 +22,14 @@ builds:
       - linux
       - windows
       - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
 
 archives:
   - formats: [tar.gz]
@@ -37,6 +45,24 @@ archives:
     format_overrides:
       - goos: windows
         formats: [zip]
+
+# Create .deb packages for Linux
+nfpms:
+  - id: deb
+    package_name: attune-test-package
+    vendor: Attune Technologies, Inc.
+    homepage: https://github.com/attunehq/attune-test-package
+    maintainer: Attune Team <team@attunehq.com>
+    description: Test package for Attune CLI smoke tests
+    license: MIT
+    formats:
+      - deb
+    bindir: /usr/bin
+    # Add some basic metadata
+    contents:
+      - src: ./README.md
+        dst: /usr/share/doc/attune-test-package/README.md
+        type: doc
 
 changelog:
   sort: asc

@@ -7,7 +7,9 @@ import (
 )
 
 var (
-	version = "1.0.2"
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
 )
 
 func main() {
@@ -17,6 +19,8 @@ func main() {
 
 	if *showVersion {
 		fmt.Printf("attune-test-package %s\n", version)
+		fmt.Printf("commit: %s\n", commit)
+		fmt.Printf("built: %s\n", date)
 		return
 	}
 
