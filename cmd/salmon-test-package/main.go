@@ -18,7 +18,7 @@ func main() {
 	flag.Parse()
 
 	if *showVersion {
-		fmt.Printf("attune-test-package %s\n", version)
+		fmt.Printf("salmon-test-package %s\n", version)
 		fmt.Printf("commit: %s\n", commit)
 		fmt.Printf("built: %s\n", date)
 		return
@@ -31,7 +31,7 @@ func main() {
 		return
 	}
 
-	fmt.Printf("Hello from attune-test-package v%s!\n", version)
+	fmt.Printf("Hello from salmon-test-package v%s!\n", version)
 	fmt.Printf("Running on %s/%s\n", runtime.GOOS, runtime.GOARCH)
-	fmt.Println("This is a test package for Attune CLI smoke tests - Version 2.0!")
+	fmt.Println("This is a test package for Attune CLI smoke tests - Salmon Edition!")
 }
